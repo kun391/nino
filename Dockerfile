@@ -11,6 +11,9 @@ RUN apt-get update && apt-get install -y -q --no-install-recommends \
         build-essential \
         ca-certificates \
         curl \
+        gcc \
+        g++ \
+        make \
         git \
         libssl-dev \
         python \
@@ -22,7 +25,7 @@ RUN apt-get update && apt-get install -y -q --no-install-recommends \
     && apt-get clean
 
 # install node 10
-RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
 RUN apt-get install -y nodejs
 
 RUN npm i -g yarn
